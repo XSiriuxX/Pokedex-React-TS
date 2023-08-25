@@ -38,23 +38,25 @@ function Pokemons() {
       <Header query={query} setQuery={setQuery} />
       <main>
         <nav className={styles.nav}>
-          {filteredPokemons?.slice(0, 151).map((pokemon) => (
-            <Link
-              key={pokemon.id}
-              className={styles.listItem}
-              to={`/pokemons/${pokemon.name.toLowerCase()}`}
-            >
-              <img
-                className={styles.listItemIcon}
-                src={pokemon.imgSrc}
-                alt={pokemon.name}
-              />
-              <div className={styles.listItemText}>
-                <span>{pokemon.name}</span>
-                <span>{pokemon.id}</span>
-              </div>
-            </Link>
-          ))}
+          <div className={styles.cardContainer}>
+            {filteredPokemons?.slice(0, 151).map((pokemon) => (
+              <Link
+                key={pokemon.id}
+                className={styles.listItem}
+                to={`/pokemons/${pokemon.name.toLowerCase()}`}
+              >
+                <img
+                  className={styles.listItemIcon}
+                  src={pokemon.imgSrc}
+                  alt={pokemon.name}
+                />
+                <div className={styles.listItemText}>
+                  <span>{pokemon.name}</span>
+                  <span>{pokemon.id}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </nav>
       </main>
       <Footer />
