@@ -28,31 +28,31 @@ function Pokemon() {
   if (loading || !pokemon) return <LoadingScreen />;
 
   return (
-    <>
+    <div className={styles.pokemon}>
       <button className={styles.pokeballButton} onClick={() => navigate(-1)}>
         <img className={styles.pokeballImg} src={PokeballImg} alt="Pokeball" />
         Go Back
       </button>
-      <div className={styles.pokemon}>
+      <div className={styles.pokemonDetailContainer}>
         <main className={styles.pokemonInfo}>
           <div className={styles.pokemonTitle}>
             {pokemon?.name?.toUpperCase()}
           </div>
-          <div>Nr. {pokemon?.id}</div>
-          <div>
+          <div className={styles.pokemonNumber}>Nr. {pokemon?.id}</div>
+          <div className={styles.pokemonImageContainer}>
             <img
               className={styles.pokemonInfoImg}
               src={pokemon?.imgSrc}
               alt={pokemon?.name}
             />
           </div>
-          <div>HP: {pokemon?.hp}</div>
-          <div>Attack: {pokemon?.attack}</div>
-          <div>Defense: {pokemon?.defense}</div>
+          <div className={styles.pokemonStat}>HP: {pokemon?.hp}</div>
+          <div className={styles.pokemonStat}>Attack: {pokemon?.attack}</div>
+          <div className={styles.pokemonStat}>Defense: {pokemon?.defense}</div>
         </main>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

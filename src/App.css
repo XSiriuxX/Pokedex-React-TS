@@ -8,9 +8,9 @@
 
 :root {
   --bg-color: #fafafa;
-  --bg-gradient: linear-gradient(185deg, red, purple);
+  --bg-gradient: linear-gradient(185deg, rgb(158, 255, 234), rgb(107, 95, 54));
 
-  --bg-border: linear-gradient(90deg, black, red);
+  --bg-border: linear-gradient(90deg, rgb(0, 0, 0), rgb(206, 0, 0));
 }
 
 body {
